@@ -1,6 +1,5 @@
 <head>
     <meta http-equiv="Content-Type"content="text/html"charset="utf-8">
-    <title>VIAJES ALEGRES</title>
     <link href="./css_estilos/estilo_01.css"rel="stylesheet"type="text/css"> 
 </head>
 
