@@ -35,7 +35,7 @@
     </p>
 </body>
 
-[<p style="font-family: rubik"> Enunciado </p>](alkemy_challenge.pdf.pdf)
+[<p style="font-family: rubik"> Enunciado </p>](alkemy_challenge.pdf)
 
 [<p style="font-family: rubik"> Índice </p> ](#id0)
 
