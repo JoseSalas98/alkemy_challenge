@@ -1,0 +1,73 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: psql_db_cont
+    image: postgres:14.3 
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-value}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-value}
+      PGDATA: /data/postgres
+    volumes:
+       - postgres:/data/postgres
+
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+  
+  pgadmin:
+    container_name: pgadmin_cont 
+    image: dpage/pgadmin4:6.11 
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+       - pgadmin:/var/lib/pgadmin
+
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+  core_app:
+    container_name: python_cont
+    build: core_app
+    image: core_app:python
+    volumes:
+      - app:/dataset
+      
+    ports:
+      - "5000:5000"
+    networks:
+      - postgres
+    depends_on:
+      - postgres
+    tty: true
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+    postgres:
+      driver: local
+      driver_opts:
+        type: none
+        device: "./data/psql_db"
+        o: bind
+    pgadmin:
+      driver: local
+      driver_opts:
+        type: none
+        device: "./data/pgadmin"
+        o: bind
+    app:
+      driver: local
+      driver_opts:
+        type: none
+        device: "./dataset"
+        o: bind
