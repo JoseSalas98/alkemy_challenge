@@ -98,7 +98,7 @@
                     <li> <p> Pathlib (módulo). </p> </li>
                     <li> <p> Os (módulo). </p> </li>
                 </ul>
-                Las librerías son instaladas en el ambiente de <b> Python </b> al momento de crear el contenedor mediante la instrucción pip. Las librerías están disponibles en el siguiente archivo:
+                Las librerías son instaladas en el ambiente de <b> Python </b> al momento de crear el contenedor mediante la instrucción: <code>pip install --default-timeout=100 future -r requirements.txt</code>. Las librerías están disponibles en el siguiente archivo:
             </p> </li>
         </ul>
     </p>
