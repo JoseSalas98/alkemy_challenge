@@ -98,10 +98,13 @@
                     <li> <p> Pathlib (módulo). </p> </li>
                     <li> <p> Os (módulo). </p> </li>
                 </ul>
+                Las librerías son instaladas en el ambiente de <b> Python </b> al momento de crear el contenedor mediante la instrucción pip. Las librerías están disponibles en el siguiente archivo:
             </p> </li>
         </ul>
     </p>
 </body>
+
+[<p style="font-family: rubik"> requirements.txt </p> ](./core_app/requirements.txt)
 
 [<p style="font-family: rubik"> Índice </p> ](#id0)
 
