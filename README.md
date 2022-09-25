@@ -6,7 +6,6 @@
 <div id='id0' > </div>
 
 <body>
-    <img src="./css_estilos/JSLogoFondoClaro.png" style="float: right" width="250" height="230">
     <h1> <b> Dockerización de ETL Basado en Web-Scraping </b> </h1>
 </body>
 
